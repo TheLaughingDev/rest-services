@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - ./gradlew clean build
+artifacts:
+  discard-paths: yes
+  files:
+    - build/libs/restservices.jar
