@@ -6,6 +6,7 @@ phases:
       java: corretto11
   build:
     commands:
+      - chmod u+x gradlew
       - ./gradlew clean build
 artifacts:
   discard-paths: yes
