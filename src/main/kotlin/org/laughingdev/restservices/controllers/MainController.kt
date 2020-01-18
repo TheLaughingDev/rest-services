@@ -7,10 +7,15 @@ import reactor.core.publisher.Mono
 import reactor.core.publisher.toMono
 
 @RestController
-@RequestMapping("/test")
-class Test {
+@RequestMapping("")
+class MainController {
 
-	@GetMapping("")
+	@GetMapping("/env")
+	fun getEnvironment():Mono<Map<String, String>> {
+		return System.getenv().toMono()
+	}
+
+	@GetMapping("/test")
 	fun test():Mono<String> {
 		return "blah".toMono()
 	}
